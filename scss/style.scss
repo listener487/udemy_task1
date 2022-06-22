@@ -5,34 +5,53 @@
 @import "vars.scss";
 @import "header.scss";
 @import "buttons.scss";
+@import "title.scss";
+@import "forms.scss";
 
 .container {
     max-width: 950px;
     margin: 0 auto;
+
+    @include lt-md {
+        width: 100%;
+    }
 }
 .promo {
     padding: 20px 0 90px 0;
     background: url('../img/bg.png') center center/cover no-repeat;
 
     &__content {
+        padding: 0 20px;
         display: flex;
         flex-direction: column;
         align-items: flex-end;
         color: #FFFFFF;
         margin-top: 90px;
+
+        @include lt-sm {
+            align-items: center;
+        }
     }
 
     &__title {
         font-family: 'Museo Sans Cyrl 700';
         font-size: 42px;
-        line-height: 42px;
+        line-height: 1em;
+
+        @include lt-xs {
+            font-size: 25px;
+        }
     }
 
     &__subtitle {
         font-family: 'Museo Sans Cyrl 500';
         font-size: 24px;
-        line-height: 24px;
+        line-height: 1em;
         margin-top: 17px;
+
+        @include lt-xs {
+            font-size: 15px;
+        }
     }
 
     &__icons {
@@ -40,13 +59,33 @@
         display: flex;
         justify-content: space-around;
         width: 425px;
+
+        @include lt-sm {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        @include lt-xs {
+            width: 100%;
+        }
     }
 
     &__icon {
         display: flex;
         flex-direction: column;
-        max-width: 110px;
+        width: 110px;
         align-items: center;
+
+        @include lt-sm {
+            margin-bottom: 30px;
+            width: 100%;
+        }
+
+        &:last-child {
+            @include lt-sm {
+                margin-bottom: 0;
+            }
+        }
 
         img {
             display: block;
@@ -57,6 +96,7 @@
             margin-top: 20px;
             font-size: 14px;
             line-height: 14px;
+            text-align: center;
         }
     }
 
@@ -74,6 +114,93 @@
                 color: #FFFFFF;
                 text-transform: uppercase;
             }
+        }
+    }
+}
+
+.advantage  {
+    background: #F6F6F6;
+    padding: 70px 0;
+
+    &__wrap {
+        padding: 0 20px;
+        margin-top: 60px;
+        display: flex;
+        justify-content: space-between; 
+
+        @include lt-xs {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 260px;
+        padding: 0 20px;
+
+        @include lt-xs {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        &:last-child {
+            @include lt-xs {
+                margin-bottom: 0;
+            }
+
+        }
+
+
+        img {
+            display: block;
+            margin: 0 auto;
+        }
+
+        h3 {
+            margin-top: 35px;
+            font-family: 'Museo Sans Cyrl 700';
+            font-size: 18px;
+            line-height: 29px;
+            text-align: center;
+        }
+
+        p {
+            margin-top: 20px;
+            padding: 0 5px;
+            font-family: 'Museo Sans Cyrl 300';
+            font-size: 14px;
+            line-height: 18px;
+            text-align: center;
+
+            span {
+                color: red;
+                text-transform: uppercase;
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+.consultation   {
+    background: url('../img/bg2.png') center center/cover no-repeat;
+    padding: 100px 20px;
+    
+    &__feedback {
+        margin-top: 8px;
+        font-family: 'Museo Sans Cyrl 500';
+        font-size: 20px;
+        line-height: 30px;
+        color: #fff;
+        width: 425px;
+
+        @include lt-xs {
+            margin-top: 20px;
+            font-size: 18px;
+            text-align: center;
+            width: 100%;
         }
     }
 }
