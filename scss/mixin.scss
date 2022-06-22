@@ -1,0 +1,14 @@
+@mixin ObjectiveBold {
+    font-family: 'ObjectiveBold', sans-serif;
+    font-weight: 700;
+}
+
+@mixin ObjectiveMedium {
+    font-family: 'ObjectiveMedium', sans-serif;
+    font-weight: 500;
+}
+
+@mixin ObjectiveRegular {
+    font-family: 'ObjectiveRegular', sans-serif;
+    font-weight: 400;
+}
